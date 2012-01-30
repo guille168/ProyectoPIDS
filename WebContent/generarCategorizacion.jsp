@@ -12,7 +12,7 @@
 <sj:head jqueryui="true" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here - G</title>
+<title>Insert title here - g</title>
 <link href="estilos/facilito.css" rel="stylesheet" type="text/css">
 
 </head>
