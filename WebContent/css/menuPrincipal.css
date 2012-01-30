@@ -1,0 +1,141 @@
+
+/*-------------------------------------------------------------
+	Propiedades para la estructura el Menu Principal
+--------------------------------------------------------------*/
+
+.cabecera{
+border-bottom: solid 1px white;
+width: 900px;
+height: 170px
+}
+
+.fondo{
+margin: 0 auto 0 auto;
+border: solid 1px none;
+background-image: url(../images/fondo.png)
+}
+
+.vinculos{
+width:900px;
+border-bottom: solid 1px white;
+}
+
+.cuerpo_xy{
+width: 900px;
+height: 560px;
+margin: 0 auto 0 auto;
+border-bottom: solid 1px white
+}
+
+.cuerpo{
+width: 70%;
+color: #3d4975;
+background-color: #F4F4F4;
+height: 560px;
+border: solid 0px #e8e8e8;
+border-top: 0px;
+border-right: 0px;
+float: left;
+margin: 0 auto 50 auto
+}
+
+.contenido{
+color: #2E2E73;
+padding: 2px;
+text-align: justify;
+font-size: 13px;
+font-family: arial
+}
+
+.lateral{
+width: 28%;
+background-color: #e8e8e8;
+height: 560px;
+border: solid 1px #e8e8e8;
+border-top: 0px;
+border-left: 0px;
+float: right;
+margin: 0 auto 0 auto
+}
+
+.marquee{
+border : solid 1px #B7CEFD ;
+background-color: #DAE6FF;
+font-family: Arial;
+font-size: 12px;
+width: 80%;
+margin: 0 auto 0 auto;
+color: #253D8B
+}
+
+.pie{    
+border: solid 1px white;
+width : 900px;
+height : 35px;
+font-family: Arial;
+font-size: 12px;
+background-color: #DAE6FF;
+color: #253D8B;
+}
+
+/*------------------------------------------------
+Propiedades para los elementos del Menu Desplegable
+-------------------------------------------------*/
+
+#sddm
+{	margin: 0;
+	padding: 0;
+	z-index: 30}
+
+#sddm li
+{	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: Left;
+	font: bold 11px arial
+}
+
+#sddm li a
+{	display: block;
+	margin: 0 1px 0 0;
+	padding: 4px 9px;
+	width: 206px;
+	background: #4760B3;
+	color: #edf3ff;
+	text-align: center;
+	text-decoration: none
+}
+
+#sddm li a:hover
+{	background: #668AFF;
+}
+
+#sddm div
+{	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #EAEBD8;
+	border: 1px solid #5970B2
+}
+
+#sddm div a 
+{
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 5px 10px;
+	width: 202px;
+	white-space: nowrap;
+	text-align: left;
+	text-decoration: none;
+	background: #CCDEE8;
+	color: #253D8B;
+	font: 11px Arial;
+}
+
+#sddm div a:hover	
+{
+	background:  #668AFF;
+	color: #FFF
+}

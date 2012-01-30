@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+/* jQuery lightBox plugin - Gallery style */
+/*  This layout is for sample purposes
+    Feel free to edit it to suit your needs
+*/
+.lbGallery {
+		background-color: #444;
+		padding: 10px;
+		width: 520px;
+	}
+	.lbGallery ul { list-style: none; }
+	.lbGallery ul li { display: inline; }
+	.lbGallery ul img {
+		border: 5px solid #3e3e3e;
+		border-width: 5px 5px 20px;
+	}
+	.lbGallery ul a:hover img {
+		border: 5px solid #fff;
+		border-width: 5px 5px 20px;
+		color: #fff;
+	}
+	.lbGallery ul a:hover { color: #fff; }
+	
+

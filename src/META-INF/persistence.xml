@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+
+	<!-- Se define el modo con el cual se realizara la persitencia -->
+	<persistence-unit name="jpa-daw2" transaction-type="RESOURCE_LOCAL">
+
+		<!-- El proveedor de la implementacin de JPA -->
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+		<!-- El listado completo de entidades que estaran bajo la persitencia de JPA -->
+		<class>aprendamos.java.bean.ClienteDTO</class>
+
+
+		<properties>
+			<property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/dawi" />
+			<property name="eclipselink.jdbc.user" value="root" />
+			<property name="eclipselink.jdbc.password" value="mysql" />
+
+    		<property name="eclipselink.logging.level" value="FINE"/> 
+   
+   		<!--	<property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> -->
+
+			<property name="eclipselink.ddl-generation" value="create-tables" /> 
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />  
+ 
+  	
+		</properties>
+
+	</persistence-unit>
+</persistence>

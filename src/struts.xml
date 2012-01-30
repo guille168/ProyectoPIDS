@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+
+	<package name="default" namespace="/" extends="struts-default">
+
+		<!-- registramos nuestro primer action -->
+
+		<action name="ModuloRegistroSolicitud" class="com.pids.action.SolicitudAction"
+			method="ModuloRegistroSolicitud">
+
+			<result name="exito">/registroSolicitud.jsp
+			</result>
+
+		</action>
+		<action name="BuscarUniversitario" class="com.pids.action.SolicitudAction"
+			method="BuscarUniversitario">
+
+			<result name="exito">/registroSolicitud.jsp
+			</result>
+
+		</action>
+			<action name="registrarSolicitud" class="com.pids.action.SolicitudAction"
+			method="registrarSolicitud">
+
+			<result name="exito">/registroSolicitud.jsp
+			</result>
+
+		</action>
+		
+		<action name="BuscarRequisitos" class="com.pids.action.SolicitudAction"
+			method="BuscarRequisitos">
+		
+
+			<result name="exito">/registroSolicitud.jsp
+			</result>
+
+		</action>
+	
+	
+		<action name="filtrarPorSolicitud" class="com.pids.action.CategorizacionAction"
+			method="filtrarPorSolicitud">
+
+			<result name="exito">/listarCategorizaciones.jsp
+			</result>
+
+		</action>
+		<action name="filtrarSolicitud" class="com.pids.action.CategorizacionAction"
+			method="filtrarSolicitud">
+
+			<result name="exito">/generarCategorizacion.jsp
+			</result>
+
+		</action>
+
+		<action name="generarCategorizacion" class="com.pids.action.CategorizacionAction"
+			method="generarCategorizacion">
+
+			<result name="exito">/generarCategorizacion.jsp
+			</result>
+
+		</action>
+
+		<action name="registraCategorizacion" class="com.pids.action.CategorizacionAction"
+			method="registraCategorizacion">
+
+			<result name="exito">/listarCategorizaciones.jsp
+			</result>
+
+		</action>
+		
+		<action name="categorizacionPorFecha" class="com.pids.action.CategorizacionAction"
+			method="categorizacionPorFecha">
+
+			<result name="exito">/categorizacionPorFecha.jsp
+			</result>
+
+		</action>
+		<action name="solicitudPorFecha" class="com.pids.action.SolicitudAction"
+			method="solicitudPorFecha">
+
+			<result name="exito">/solicitudPorFecha.jsp
+			</result>
+
+		</action>
+		
+		<action name="logueo" class="com.pids.action.LoginAction"
+			method="logueo">
+
+			<result name="success">/bienvenida.jsp
+			</result>
+			<result name ="error">/logueo.jsp
+			</result>
+
+		</action>
+		
+	</package>
+
+	<!-- Add packages here -->
+
+</struts>

@@ -1,0 +1,144 @@
+
+/*--------------------- 
+	De los textos
+----------------------*/
+
+.TextoNormal{
+    font-family: Verdana, Arial;
+    font-size: 13px;
+    font-weight: bold;
+    color: white
+}
+
+.NormalDouble
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 20px    
+}
+
+.HomeHead
+{
+    color: #999966;
+    font-family: Verdana, Arial;
+    font-size: 20px;
+    font-weight: bold;
+    HEIGHT: 35px
+}
+
+/*--------------------- 
+	De los titulos
+----------------------*/
+
+.TituloMenu
+{
+    background-color: #1814A9;
+    color: white;
+    font-family: Verdana, Arial;
+    font-size: 19px;
+    font-weight: bold;
+    height: 35px
+}
+
+
+.TituloCabecera
+{
+    background-color: #1814A9;
+    color: #2FB7EB;
+    font-family: Verdana, Arial;
+    font-size: 24px;
+    font-weight: bold;
+    height: 35px;
+}
+
+/*--------------------- 
+	Del Listado
+----------------------*/
+
+.ListadoCabecera
+{
+    background-color: #1814A9;
+    color: white;
+    font-family: Verdana, Arial;
+    font-size: 15px;
+    font-weight: bold
+    
+}
+
+.ListadoData
+{
+    background-color: white;
+    color: #1814A9;
+    font-family: Verdana, Arial;
+    font-size: 12px;
+    font-weight: bold
+	
+}
+
+
+/*--------------------- 
+	Del Menu 
+----------------------*/
+
+A.SiteLinkBold, A.SiteLinkBold:link, A.SiteLinkBold:visited
+{
+    color: white;
+    font-family: Verdana, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size:  16px;
+    font-weight: bold
+}
+  
+A.SiteLinkBold:hover
+{
+   	color: #2FB7EB;
+    text-decoration: none;
+    font-size:  16px;
+    font-weight: bold 
+}
+
+/*--------------------- 
+	De Hyperlink 
+----------------------*/
+
+A:link  {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size:  16px;
+    font-family: Verdana, Arial;
+    font-style: italic
+}
+
+A, A:hover {
+    text-decoration: underline;
+    color: white;
+    font-weight: bold;
+    font-size:  16px;
+    font-family: Verdana, Arial;
+    font-style: italic
+} 
+
+/*--------------------- 
+	De los Elementos
+----------------------*/
+
+.Elemento
+{
+    font-family: Verdana, Arial ;
+    font-size: 13px;
+    font-weight: bold;
+    color:  #1814A9;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1814A9
+}
+
+/*--------------------- 
+	De la Tabla de Data
+----------------------*/
+TABLE {
+	border: thin;
+	border-color: gray
+}
