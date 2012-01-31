@@ -1,6 +1,6 @@
 package com.pids.action;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import com.pids.beans.CategorizacionMixto;
@@ -28,6 +28,9 @@ public class SolicitudAction {
 	public String solicitudPorFecha() {
 
 		try {
+			System.out.println("FecIni : "+ fecIni);
+			System.out.println("FecFin : "+ fecFin);
+			
 			listaCategorizacionMixta = serviceSolicitud
 					.consultarAprobadasRangoFecha(fecIni, fecFin);
 

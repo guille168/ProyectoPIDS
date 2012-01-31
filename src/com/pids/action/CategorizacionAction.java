@@ -1,6 +1,6 @@
 package com.pids.action;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import com.pids.beans.Categorizacion;
@@ -63,7 +63,7 @@ public class CategorizacionAction {
 			System.out.println("FecFin : "+ fecFin);
 			
 			listaCategorizacionMixta = serviceCategorizacion
-					.consultaRangoFecha(new Date(), new Date(),
+					.consultaRangoFecha(fecIni, fecFin,
 							estadoCate);
 
 			System.out.println(listaCategorizacionMixta.size());
