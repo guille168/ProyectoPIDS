@@ -4,7 +4,7 @@
 <%@ taglib prefix="s"  uri="/struts-tags" %>
 
 <head>
-<title> Esta es mi primera pagina</title>
+<title> Esta es mi primera pagina - profesora gisella</title>
 
 <link 
 	href="estilos/facilito.css" 

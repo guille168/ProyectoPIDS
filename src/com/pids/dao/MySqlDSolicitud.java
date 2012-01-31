@@ -79,7 +79,7 @@ public class MySqlDSolicitud implements ISolicitud {
 		return lista;
 	}
 
-	@Override
+	@Override///cambios para filtara solocitudes pendienes
 	public List<SolicitudAe> listaSolicitud(Integer sol) throws SQLException {
 		ArrayList<SolicitudAe> lista = new ArrayList<SolicitudAe>();
 		ArrayList<Universitario> universitarios = new ArrayList<Universitario>();
@@ -288,6 +288,60 @@ public class MySqlDSolicitud implements ISolicitud {
 			obj.setNom_tra(rs.getString(5));
 			lista.add(obj);
 
+		}
+
+		cn.close();
+
+		return lista;
+	}
+
+	@Override
+	public List<SolicitudAe> listaSolicitudPendientes(Integer sol)throws SQLException {
+		
+		ArrayList<SolicitudAe> lista = new ArrayList<SolicitudAe>();
+		ArrayList<Universitario> universitarios = new ArrayList<Universitario>();
+		Connection cn = MySqlDBConn.obtenerConexion();
+
+		// definimos la sentencia
+		String sql1 = "select * from universitario ";
+		PreparedStatement pst1 = cn.prepareStatement(sql1);
+		// asignamos valores a las interrogantes
+		ResultSet rs1 = pst1.executeQuery();
+		while (rs1.next()) {
+
+			Universitario requisito = new Universitario();
+			requisito.setCodUniv(rs1.getInt(1));
+			requisito.setNomUniv(rs1.getString(2));
+			requisito.setApeUniv(rs1.getString(3));
+			requisito.setSexoUniv(rs1.getString(4));
+			requisito.setFecNac(rs1.getDate(5));
+			requisito.setDireccion(rs1.getString(6));
+			requisito.setUsuario(rs1.getString(7));
+			requisito.setPassword(rs1.getString(8));
+			universitarios.add(requisito);
+		}
+		String estado= "pendiente";
+		String sql = "select * from solicitud_ae where num_solicitud = ? and estado = "+ estado  ;
+		System.out.println("cadena filtro: " + sql);
+
+		// la preparamos
+		PreparedStatement pst = cn.prepareStatement(sql);
+		// asignamos valores a las interrogantes
+		pst.setInt(1, sol);
+		ResultSet rs = pst.executeQuery();
+
+		while (rs.next()) {
+
+			SolicitudAe objSolicitudAe = new SolicitudAe();
+
+			objSolicitudAe.setNumSolicitud(rs.getInt(1));
+			objSolicitudAe.setFecha(rs.getDate(2));
+			for (Universitario aux : universitarios) {
+				if (rs.getInt(4) == aux.getCodUniv())
+					objSolicitudAe.setUniversitario(aux);
+			}
+			objSolicitudAe.setEstado(rs.getString(5));
+			lista.add(objSolicitudAe);
 		}
 
 		cn.close();

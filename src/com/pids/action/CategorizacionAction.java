@@ -39,7 +39,7 @@ public class CategorizacionAction {
 	}
 
 	public String filtrarSolicitud() {
-		try {
+		try {//cambios para filtara solicitudes pendientes
 
 			listaSolicitud = serviceSolicitud.listaSolicitud(numSolicitud);
 			for (SolicitudAe aux : listaSolicitud) {

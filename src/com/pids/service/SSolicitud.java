@@ -69,4 +69,12 @@ public class SSolicitud implements ISolicitud {
 		return objSolicitud.consultarAprobadasRangoFecha(fecIni, fecFin);
 	}
 
+
+	@Override
+	public List<SolicitudAe> listaSolicitudPendientes(Integer sol)
+			throws SQLException {
+		// TODO Auto-generated method stub
+		return objSolicitud.listaSolicitudPendientes(sol);
+	}
+
 }

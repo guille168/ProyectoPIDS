@@ -13,6 +13,8 @@ import com.pids.beans.TipoSolicitud;
 public interface ISolicitud {
 	public abstract List<DetalleSolicitud> detalleSolicitud(SolicitudAe sol) throws SQLException;
 	public abstract List<SolicitudAe> listaSolicitud(Integer sol) throws SQLException;
+	//listar solicitudes pendientes
+	public abstract List<SolicitudAe> listaSolicitudPendientes(Integer sol) throws SQLException;
 	public abstract List<SolicitudAe> listaTodas() throws SQLException;
 	public abstract List<TipoSolicitud> listarTipos() throws SQLException;
 	public List<Requisito> listarRequisitos(Integer tipSol) throws SQLException;
