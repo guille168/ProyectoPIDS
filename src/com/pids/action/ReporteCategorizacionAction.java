@@ -5,56 +5,30 @@ import java.util.List;
 
 import com.pids.beans.Categorizacion;
 import com.pids.beans.CategorizacionMixto;
+import com.pids.beans.ReporteCategorizacionMixto;
 import com.pids.beans.SolicitudAe;
 import com.pids.interfaces.ICategorizacion;
+import com.pids.interfaces.IReporteCategorizacion;
 import com.pids.interfaces.ISolicitud;
 import com.pids.service.PaqueteBusinessDelegate;
 
-public class CategorizacionAction {
+public class ReporteCategorizacionAction {
 
 	private SolicitudAe solicitud;
 	private int numSolicitud;
-	private List<Categorizacion> listaCategorizacion;
 	private List<SolicitudAe> listaSolicitud;
 	private Categorizacion categorizacionB;
-	private List<CategorizacionMixto> listaCategorizacionMixta;
+	private List<ReporteCategorizacionMixto> listaCategorizacionMixta;
 	private Date fecIni;
 	private Date fecFin;
 	private String estadoCate;
-	ICategorizacion serviceCategorizacion = PaqueteBusinessDelegate
-			.getCategorizacionService();
+	IReporteCategorizacion serviceCategorizacion = PaqueteBusinessDelegate
+			.getReporteCategorizacion();
 	ISolicitud serviceSolicitud = PaqueteBusinessDelegate.getSolicitudService();
 
-	public String filtrarPorSolicitud() {
-		try {
 
-			listaSolicitud = serviceCategorizacion
-					.filtrarPorCategorizacion(numSolicitud);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "error";
-		}
-		return "exito";
-	}
-
-	public String filtrarSolicitud() {
-		try {//cambios para filtara solicitudes pendientes
-
-			listaSolicitud = serviceSolicitud.listaSolicitudPendientes(numSolicitud);
-			for (SolicitudAe aux : listaSolicitud) {
-				solicitud = aux;
-
-			}
-			System.out.println(listaSolicitud.size());
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "error";
-		}
-		return "exito";
-
-	}
+	
 
 	public String categorizacionPorFecha() {
 		try {
@@ -62,8 +36,7 @@ public class CategorizacionAction {
 			System.out.println("FecIni : "+ fecIni);
 			System.out.println("FecFin : "+ fecFin);
 			
-			listaCategorizacionMixta = serviceCategorizacion
-					.consultaRangoFecha(fecIni, fecFin,
+			listaCategorizacionMixta = serviceCategorizacion.consultaRangoFecha(fecIni, fecFin,
 							estadoCate);
 
 			System.out.println(listaCategorizacionMixta.size());
@@ -76,49 +49,7 @@ public class CategorizacionAction {
 
 	}
 
-	public String generarCategorizacion() {
-		try {
-
-			listaSolicitud = serviceSolicitud.listaTodas();
-
-			System.out.println(listaSolicitud.size());
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "error";
-		}
-		return "exito";
-
-	}
-
-	public String registraCategorizacion() {
-		try {
-			solicitud = new SolicitudAe();
-			solicitud.setNumSolicitud(numSolicitud);
-			categorizacionB.setSolicitudAe(solicitud);
-
-			if (categorizacionB.getDescripcion().equals("RECHAZADO"))
-				categorizacionB.setMontoEntrega(0.0);
-
-			int i = serviceCategorizacion
-					.registraCategorizacion(categorizacionB);
-			if (i > 0)
-				return "exito";
-			else
-				return "error";
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		return "exito";
-	}
-
-	public List<Categorizacion> getListaCategorizacion() {
-		return listaCategorizacion;
-	}
-
-	public void setListaCategorizacion(List<Categorizacion> listaCategorizacion) {
-		this.listaCategorizacion = listaCategorizacion;
-	}
+	
 
 	public SolicitudAe getSolicitud() {
 		return solicitud;
@@ -152,14 +83,20 @@ public class CategorizacionAction {
 		this.listaSolicitud = listaSolicitud;
 	}
 
-	public List<CategorizacionMixto> getListaCategorizacionMixta() {
+
+
+	public List<ReporteCategorizacionMixto> getListaCategorizacionMixta() {
 		return listaCategorizacionMixta;
 	}
 
+
+
 	public void setListaCategorizacionMixta(
-			List<CategorizacionMixto> listaCategorizacionMixta) {
+			List<ReporteCategorizacionMixto> listaCategorizacionMixta) {
 		this.listaCategorizacionMixta = listaCategorizacionMixta;
 	}
+
+
 
 	public String getEstadoCate() {
 		return estadoCate;

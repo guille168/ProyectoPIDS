@@ -46,7 +46,7 @@
 						<tr class="control">
 							<td><s:text name="Nro. Solicitud" /></td>
 							<td><s:textfield name="numSolicitud" required="true"/></td>
-							<td><s:submit action="filtrarSolicitud" /></td>
+						<!--<td><s:submit action="filtrarSolicitud" /></td>-->
 						</tr>
 						<tr>
 							<th><s:text name="Solicitud"  />

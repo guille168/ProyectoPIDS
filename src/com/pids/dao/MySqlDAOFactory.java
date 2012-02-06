@@ -1,6 +1,7 @@
 package com.pids.dao;
 
 import com.pids.interfaces.ICategorizacion;
+import com.pids.interfaces.IReporteCategorizacion;
 import com.pids.interfaces.ISolicitud;
 import com.pids.interfaces.ITrabajador;
 import com.pids.interfaces.IUniversitario;
@@ -35,6 +36,12 @@ public class MySqlDAOFactory extends DAOFactory {
 	public ITrabajador getTrabajador() {
 		// TODO Auto-generated method stub
 		return new MySqlDTrabajador();
+	}
+
+	@Override
+	public IReporteCategorizacion getReporteCategorizacion() {
+		// TODO Auto-generated method stub
+		return new MySqlDReporteCategorizacion();
 	}
 	
 // Esta es una fabrica que crea DAOs especificos para  Mysql 

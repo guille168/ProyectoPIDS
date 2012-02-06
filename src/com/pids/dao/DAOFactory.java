@@ -7,6 +7,7 @@
 package com.pids.dao;
 
 import com.pids.interfaces.ICategorizacion;
+import com.pids.interfaces.IReporteCategorizacion;
 import com.pids.interfaces.ISolicitud;
 import com.pids.interfaces.ITrabajador;
 import com.pids.interfaces.IUniversitario;
@@ -31,6 +32,7 @@ public abstract class DAOFactory {
 	public abstract ISolicitud getSolicitud();
 	public abstract IUniversitario getUniversitario();
 	public abstract ITrabajador getTrabajador();
+	public abstract IReporteCategorizacion getReporteCategorizacion();
 
 	public static DAOFactory getDAOFactory(int whichFactory) {
 		switch (whichFactory) {

@@ -229,18 +229,25 @@ public class MySqlDSolicitud implements ISolicitud {
 	@Override
 	public int registraSolicitud(SolicitudAe sol) throws SQLException {
 		int resultado = 0;
-
+		
+		java.util.Date date = new java.util.Date(); 
+		java.text.SimpleDateFormat sdf=new java.text.SimpleDateFormat("yyyy-MM-dd");
+		String fecha = sdf.format(date);
+		
 		Connection cn = MySqlDBConn.obtenerConexion();
-
-		String sql = "insert into solicitud_ae(num_solicitud,cod_tip_sol,cod_univ,estado,cod_tra)"
-				+ "" + "values (null,?,?,?,1)";
+/*
+		String sql = "insert into solicitud_ae(num_solicitud,,fecha,cod_tip_sol,cod_univ,estado,cod_tra)"
+				+ "" + "values (null,,?,?,?,1)";*/
+		String sql = "insert into solicitud_ae(num_solicitud,fecha,cod_tip_sol,cod_univ,estado,cod_tra)"
+			+ "" + "values (null,?,?,?,?,1)";
 
 		PreparedStatement pst = cn.prepareStatement(sql);
 
 		// asignamos valores a las interrogantes
-		pst.setInt(1, sol.getTipoSolicitud().getCodTipSol());
-		pst.setDouble(2, sol.getUniversitario().getCodUniv());
-		pst.setString(3, sol.getEstado());
+		pst.setString(1, fecha);
+		pst.setInt(2, sol.getTipoSolicitud().getCodTipSol());
+		pst.setDouble(3, sol.getUniversitario().getCodUniv());
+		pst.setString(4, sol.getEstado());
 
 		// ejecutamos la sentencia
 		resultado = pst.executeUpdate();
@@ -321,13 +328,14 @@ public class MySqlDSolicitud implements ISolicitud {
 			universitarios.add(requisito);
 		}
 		String estado= "pendiente";
-		String sql = "select * from solicitud_ae where num_solicitud = ? and estado = "+ estado  ;
+		String sql = "select * from solicitud_ae where num_solicitud = ? and estado = ?" ;
 		System.out.println("cadena filtro: " + sql);
 
 		// la preparamos
 		PreparedStatement pst = cn.prepareStatement(sql);
 		// asignamos valores a las interrogantes
 		pst.setInt(1, sol);
+		pst.setString(2, estado);
 		ResultSet rs = pst.executeQuery();
 
 		while (rs.next()) {

@@ -8,6 +8,24 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="true" />
 
+<package name="pjasper" extends="jasperreports-default">
+			
+		<result-types>
+				<result-type name="jasper" class="org.apache.struts2.views.jasperreports.JasperReportsResult" />
+		</result-types>	
+		
+		<action name="RcategorizacionPorFecha" class="com.pids.action.ReporteCategorizacionAction" 
+				method="categorizacionPorFecha">
+			<result name="exito" type="jasper">
+					<param name="location">/reportes/reporteCategorizacionFechas.jasper</param>
+					<param name="dataSource">listaCategorizacionMixta</param>
+					<param name="contentDispotition">attachment;filename="reporteCategorizacionFechas.pdf"</param>
+					<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		
+	</package>
 
 	<package name="default" namespace="/" extends="struts-default">
 
